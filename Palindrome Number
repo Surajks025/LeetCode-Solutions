@@ -1,0 +1,18 @@
+//9.Palindrome Number
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if(x<0)
+            return false;
+        long long xr=0,xc=x;
+        while(xc){
+            xr*=10;
+            xr+=xc%10;
+            xc/=10;
+        }
+        if(xr==x)
+            return true;
+        else
+            return false;
+    }
+};
