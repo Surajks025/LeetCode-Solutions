@@ -1,0 +1,25 @@
+//Two sum O(n) solution 
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        int n=nums.size();
+        vector <int> ans;
+        set <int> s;
+        for(int i=0;i<n;i++){
+            int d=target-nums[i];
+            if(s.count(d)){
+                for(int j=0;j<n;j++){
+                    if(nums[j]==d){
+                        ans.push_back(i);
+                        ans.push_back(j);
+                        break;
+                    }
+                }
+            }
+            if(ans.size())
+                break;
+            s.insert(nums[i]);
+        }
+        return ans;
+    }
+};
